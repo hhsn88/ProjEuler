@@ -15,9 +15,14 @@ def sanityCheck(n):
 
 def isPandigitalProd(num, s, e):
     for a in range(s, e):
+        if not sanityCheck(a):
+            continue
         if num % a == 0:
+            b = int(num / a)
+            if not sanityCheck(b):
+                continue
             A = np.array([int(i) for i in str(a)])
-            B = np.array([int(i) for i in str(int(num / a))])
+            B = np.array([int(i) for i in str(b)])
             N = np.array([int(i) for i in str(num)])
             allDigits = np.concatenate([A, B, N])
             uniqueAllDigits = np.unique(allDigits)
