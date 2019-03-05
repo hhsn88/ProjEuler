@@ -1,10 +1,7 @@
-import sys, os
+from ..myutils import numUtils
 import numpy as np
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'myutils'))
-from numUtils import *
-
-primes = primesLessThanM[3:]
+primes = numUtils.primesLessThanM[3:]
 
 lastIdx = 1
 maxPrime = 0
